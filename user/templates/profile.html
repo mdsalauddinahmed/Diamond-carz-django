@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>This is profile page</h1>
+
+<button class="btn"><a href="{% url 'category'%}">Add Category</a></button>
+<button class="btn"><a href="{% url 'post'%}">Add Car post</a></button>
+{% endblock content %}

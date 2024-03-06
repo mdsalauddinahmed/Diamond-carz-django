@@ -1,0 +1,60 @@
+ {% extends "base.html" %}
+ {% load static %}
+
+ {% block content %}
+ 
+ <div class="d-flex flex-wrap">
+    <div class="col-6 mt-5 text-dark">
+        <h1>Welcome to Diamond Carz Service Clinic</h1>
+        <p >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus labore maiores id quisquam,  obcaecati nobis nihil aperiam similique ducimus aliquid!</p>
+      </div>
+      <div class="col-6  ">
+    
+        <img class="w-100 m-auto p-3 rounded" src="{% static 'banner.webp'%}" alt="">
+      </div>
+    
+       </div>
+ </div>
+
+
+ <div class="container-md mt-5">
+    <h2 class="text-center pb-2">All Cars here......</h2>
+  <div class="d-flex flex-wrap ">
+    {% for cat in categories %}
+    <div class="col-2 mb-3">
+      
+        <button class="btn btn-primary">{{cat.name}}</button>
+           </div>
+        {% endfor %}
+       
+
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-center px-5 pt-5">
+    {% for i in data %}
+  <div class="col-sm-3 m-3">
+    
+    
+    <div class="card" style="width: 14rem; margin-left:10px;">
+        <img class="card-img-top" src="{{i.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <p class="card-text">{{i.description | truncatewords:15}}</p>
+          <a href="#" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    
+ 
+
+  </div>
+  {% endfor %}
+   
+
+  </div>
+ 
+
+
+
+ </div>
+ 
+ {% endblock content %}
